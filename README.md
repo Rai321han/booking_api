@@ -82,13 +82,15 @@ app/
 ├── routes/             # Express route definitions and API endpoints
 ├── db/                 # Database connection and migrations
 │   └── migrations/     # Schema versioning
-├── utils/              # utility class/functions
 ├── database.sql        # exported pg dumb file
+├── middlewares/        # middlewares
 ├── docker-compose.yml  # Docker setup for local PostgreSQL
 ├── .env                # Environment variables
 ├── package.json        # Project metadata and dependencies
 ├── index.js            # Application entry point
 ├── README.md           # Project documentation
+utils/                  # utility class/functions
+
 
 ```
 
