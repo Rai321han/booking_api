@@ -31,6 +31,7 @@ app/
 ├── routes/             # Express route definitions and API endpoints
 ├── db/                 # Database connection and migrations
 │   └── migrations/     # Schema versioning
+├── utils/              # utility class/functions
 ├── database.sql        # exported pg dumb file
 ├── docker-compose.yml  # Docker setup for local PostgreSQL
 ├── .env                # Environment variables
