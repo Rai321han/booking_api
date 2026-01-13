@@ -76,9 +76,10 @@ DATABASE_URL=postgresql://dbuser:dbpassword@host:5432/dbname
 ## API Example
 
 **Valid Locations for this API**
-
+```sh
 - jeddah
 - auckland
+```
 
 ### Search Flights & Attractions by Location
 
