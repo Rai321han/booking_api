@@ -23,8 +23,6 @@ export const searchByLocation = async (req, res, next) => {
     const flights = await Flight.findByLocationId(location.id);
     const attractions = await Attraction.findByLocationId(location.id);
 
-    console.log(attractions[0])
-
     const attractionData = attractions.map(attraction => (
       {
         id: attraction.id,

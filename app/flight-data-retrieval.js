@@ -120,9 +120,6 @@ async function getAirportIdsCombinations() {
 
 async function saveFlightDetailsToDB(flightData) {
   const client = await pool.connect();
-
-  console.log(flightData)
-
   try {
     await client.query('BEGIN')
 
@@ -164,7 +161,6 @@ async function saveFlightDetailsToDB(flightData) {
     await client.query(flightQueryText, [locationId, flightData.departureTime, flightData.arrivalTime, flightData.flightName, flightData.flightLogo, flightData.fare, flightData.departureAirport, flightData.arrivalAirport]);
 
     await client.query('COMMIT')
-    console.log("DONE")
   } catch (e) {
     await client.query('ROLLBACK')
     throw e

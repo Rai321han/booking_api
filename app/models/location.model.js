@@ -22,7 +22,6 @@ class Location {
         FROM locations
         WHERE cityName = $1
         `;
-        console.log("here")
         const { rows } = await query(sql, [lowerCaseName]);
         return rows[0];
     }

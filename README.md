@@ -80,7 +80,7 @@ DATABASE_URL=postgresql://dbuser:dbpassword@host:5432/dbname
 **Endpoint**
 
 ```http
-GET /api/search/:searchLocation
+GET /api/v1/search/:searchLocation
 ```
 
 **Response**
@@ -100,7 +100,7 @@ GET /api/search/:searchLocation
 **Endpoint**
 
 ```http
-GET /api/details/:id?searchtype=flight/attraction
+GET /api/v1/details/:id?searchtype=flight/attraction
 ```
 
 **Response**
