@@ -1,6 +1,7 @@
 import Location from "../models/location.model.js";
 import Flight from "../models/flight.model.js";
 import Attraction from "../models/attraction.model.js";
+import AppError from "../../utils/AppError.js";
 
 
 /**
@@ -10,13 +11,12 @@ export const searchByLocation = async (req, res, next) => {
   try {
     const { searchLocation } = req.params;
 
-
+    
     // Find location
-    const location = await Location.findByName(searchLocation);
+    let location = searchLocation.trim() 
+    location = await Location.findByName(searchLocation);
     if (!location) {
-      return res.status(404).json({
-        message: "Location not found",
-      });
+      throw new AppError("Location not found", 404);
     }
 
     // Get flights under this location

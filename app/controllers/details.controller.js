@@ -1,3 +1,4 @@
+import AppError from "../../utils/AppError.js";
 import Attraction from "../models/attraction.model.js";
 import Flight from "../models/flight.model.js";
 /**
@@ -9,18 +10,17 @@ export const getDetails = async (req, res, next) => {
     const { searchtype } = req.query;
 
     if (!searchtype) {
-      return res.status(400).json({
-        message: "searchtype query is required",
-      });
+      throw new AppError("searchtype query is required", 400)
     }
 
-    if (searchtype === "flight") {
+
+    const trimedSearchType = searchtype.trim()
+
+    if (trimedSearchType === "flight") {
       const flight = await Flight.findById(id);
 
       if (!flight) {
-        return res.status(404).json({
-          message: "Flight not found",
-        });
+        throw new AppError("Flight not found", 404)
       }
 
       const flightData =  {
@@ -43,13 +43,11 @@ export const getDetails = async (req, res, next) => {
       });
     }
 
-    if (searchtype === "attraction") {
+    if (trimedSearchType === "attraction") {
       const attraction = await Attraction.findById(id);
 
       if (!attraction) {
-        return res.status(404).json({
-          message: "Attraction not found",
-        });
+        throw new AppError("Attraction not found", 404)
       }
 
       const attractionData =   {
@@ -72,10 +70,8 @@ export const getDetails = async (req, res, next) => {
         Attraction: attractionData ? attractionData : "No attraction under this location."
       });
     }
+    throw new AppError("Invalid searchtype value", 400)
 
-    res.status(400).json({
-      message: "Invalid searchtype value",
-    });
   } catch (error) {
     next(error);
   }
