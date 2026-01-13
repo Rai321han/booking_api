@@ -12,6 +12,56 @@ A backend REST API for getting **flights, and attractions** by location, built w
 * Search flights & attractions by location name
 ---
 
+## API Example
+
+**Valid Locations for this API**
+```sh
+- jeddah
+- auckland
+```
+
+### Search Flights & Attractions by Location
+
+**Endpoint**
+
+```http
+GET /api/v1/search/:searchLocation
+```
+
+**Response**
+
+```json
+{
+  "GeoInfo": {
+    "name": "jeddah",
+    "country": "SA"
+  },
+  "Flights": [...],
+  "Attractions": [...]
+}
+```
+
+
+**Endpoint**
+
+```http
+GET /api/v1/details/:id?searchtype=flight/attraction
+```
+
+**Response**
+
+```json
+{
+  "GeoInfo": {
+    "name": "jeddah",
+    "country": "SA"
+  },
+  "Flights": {...}
+}
+```
+
+---
+
 ## Tech Stack
 
 * **Node.js**
@@ -73,54 +123,6 @@ DATABASE_URL=postgresql://dbuser:dbpassword@host:5432/dbname
 ```
 
 ---
-
-## API Example
-
-**Valid Locations for this API**
-```sh
-- jeddah
-- auckland
-```
-
-### Search Flights & Attractions by Location
-
-**Endpoint**
-
-```http
-GET /api/v1/search/:searchLocation
-```
-
-**Response**
-
-```json
-{
-  "GeoInfo": {
-    "name": "jeddah",
-    "country": "SA"
-  },
-  "Flights": [...],
-  "Attractions": [...]
-}
-```
-
-
-**Endpoint**
-
-```http
-GET /api/v1/details/:id?searchtype=flight/attraction
-```
-
-**Response**
-
-```json
-{
-  "GeoInfo": {
-    "name": "jeddah",
-    "country": "SA"
-  },
-  "Flights": {...}
-}
-```
 ---
 
 ## Author
