@@ -61,7 +61,7 @@ npm install
 Create a `.env` file:
 
 ```env
-PORT= //server port
+PORT=server port
 POSTGRES_USER=postgres username
 POSTGRES_PASSWORD=postgres password
 POSTGRES_DB=databse name
