@@ -122,4 +122,4 @@ GET /api/details/:id?searchtype=flight/attraction
 ## Author
 
 **Raihan Uddin**
-Software Engineer Intern, W3 Engineers Ltd.
+- Software Engineer Intern, W3 Engineers Ltd.
