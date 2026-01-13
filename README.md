@@ -25,22 +25,19 @@ A backend REST API for getting **flights, and attractions** by location, built w
 ## Project Structure
 
 ```sh
-├── app
-│   ├── controllers
-│   │   └── search.controller.js
-│   ├── models
-│   │   ├── location.model.js
-│   │   ├── flight.model.js
-│   │   └── attraction.model.js
-│   ├── db
-│   │   ├── migrations
-│   │   └── query.js
-│   └── routes
-│       └── search.routes.js
-├── index.js
-├── .env
-├── package.json
-└── README.md
+app/
+├── controllers/        # Handles incoming HTTP requests and response logic
+├── models/             # application models (Flight, Attraction, Location)
+├── routes/             # Express route definitions and API endpoints
+├── db/                 # Database connection and migrations
+│   └── migrations/     # Schema versioning
+├── database.sql        # exported pg dumb file
+├── docker-compose.yml  # Docker setup for local PostgreSQL
+├── .env                # Environment variables
+├── package.json        # Project metadata and dependencies
+├── index.js            # Application entry point
+├── README.md           # Project documentation
+
 ```
 
 ---
