@@ -10,6 +10,7 @@ A backend REST API for getting **flights, and attractions** by location, built w
 * Flights linked to locations
 * Attractions linked to locations
 * Search flights & attractions by location name
+* Search flights & attractions by their id.
 ---
 
 ## API Example
